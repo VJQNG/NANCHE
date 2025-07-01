@@ -1,20 +1,22 @@
 '''
-Esta será una calculadora, ademas de prácticas python otra vez
+Esta será una calculadora, ademas de practicar python otra vez.
 '''
 def extraer_caracteres(a):
-    caracteres = [x for x in a]
+    c = [x for x in a]
     espera = ''
     op = 0
-    for relleno in caracteres:
-        if relleno in '0123456789':
-            espera += relleno
-            caracteres.pop(0)
-        else:
+    print(c)
+    for relleno in c:
+        if relleno in '+-*/':
+            print(f'caracteres: {c}, espera: {espera}')
             break
-    for cosa in caracteres:
-        if cosa == '+':
-            pass
-        
+        else:
+            print(f'caracteres: {c}, espera: {espera}')
+            espera += relleno
+            c.pop(0)
+            print(f'caracteres: {c}, espera: {espera}')
+
+
 
 
 
