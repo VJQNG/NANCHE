@@ -17,7 +17,11 @@ def conjuntos():
 
 
 '''
-Diccionarios: coleccion de pares clave valor, cada clave debe ser unica y sirve para acceder a el valor asociado
+-Diccionarios: coleccion de pares clave valor, cada clave debe ser unica y sirve para acceder a el valor asociado
+-Diccionario anidado usando get(ARGUMENTO): lo uso por comodidad para saber a que estoy accediendo, si solo fuera con un indice como en listas anidadas, ademas, se ve mejor el codigo.
+-items(): regresa una tupla: (CLAVE, VALOR) accediendo con dos variables; for clave, valor in diccionario
+-keys(): regresa las claves accediendo con una variable; for claves in diccionario
+-values(): regresa los valores accediendo con una variable; for valores in diccionario
 '''
 def diccionarios():
     contactos = {
@@ -39,5 +43,22 @@ def diccionarios():
     for nombre, numero in contactos.items():
         print(f'\nNombre: {nombre};Número: {numero}')
     
+    # Metodos items(), keys(), values()
+    dic2 = {1:'mango', 2:'manzana', 3:'platano', 4:'fresa', 5:'piña'}
+    
+    for ID, fruta in dic2.items():
+        print(f'Identificador: {ID}\nFruta: {fruta}')
+
+    # Diccionarios anidados
+    # {CODIGO : {NOMBRE : ELEMENTO, PRECIO : ELEMENTO...}}
+    dic = {123 : {'nombre' : 'mango', 'precio' : 40},
+           234 : {'nombre' : 'manzana', 'precio' : 25},
+           345 : {'nombre' : 'platano', 'precio' : 20},
+           456 : {'nombre' : 'fresa', 'precio' : 60},
+           567 : {'nombre' : 'piña', 'precio' : 15}}
+    
+    codigo = 123
+    acceder = dic.get(codigo)
+    print(f'Codigo: {codigo}\nNombre: {acceder['nombre']}\nPrecio: {acceder['precio']}')
 
 diccionarios()
